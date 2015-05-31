@@ -1,0 +1,48 @@
+#N canvas 388 344 450 300 10;
+#X obj 124 11 keyup;
+#X floatatom 73 37 5 0 0 0 - - -;
+#X floatatom 148 31 5 0 0 0 - - -;
+#X obj 29 76 mtof;
+#X obj 14 163 osc~;
+#X obj 67 59 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 153 59 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 69 149 pack 0 50;
+#X obj 69 175 line~;
+#X obj 14 192 *~;
+#X obj 10 255 dac~;
+#X msg 73 85 1;
+#X msg 149 81 0;
+#X obj 57 14 key;
+#X obj 15 140 line;
+#X obj -3 106 pack 0 500;
+#X obj 276 70 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 359 74 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 275 99 xset r off;
+#X msg 357 99 xset r on;
+#X obj 276 123 shell;
+#X text 279 44 Turn Key Repat Off/On;
+#X connect 0 0 2 0;
+#X connect 2 0 6 0;
+#X connect 3 0 15 0;
+#X connect 4 0 9 0;
+#X connect 5 0 11 0;
+#X connect 6 0 12 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 1;
+#X connect 9 0 10 0;
+#X connect 9 0 10 1;
+#X connect 11 0 7 0;
+#X connect 12 0 7 0;
+#X connect 13 0 1 0;
+#X connect 13 0 3 0;
+#X connect 13 0 5 0;
+#X connect 14 0 4 0;
+#X connect 15 0 14 0;
+#X connect 16 0 18 0;
+#X connect 17 0 19 0;
+#X connect 18 0 20 0;
+#X connect 19 0 20 0;
