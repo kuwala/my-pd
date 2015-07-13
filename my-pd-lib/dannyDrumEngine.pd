@@ -1,4 +1,4 @@
-#N canvas 33 134 1731 787 12;
+#N canvas -44 70 1796 787 12;
 #X obj 27 23 loadbang;
 #X msg 27 92 read -resize \$1 kickSample;
 #X msg 27 58 symbol /home/ccrma/dsamples/Kick_808_4.wav;
@@ -90,6 +90,15 @@
 #X obj 714 380 spigot;
 #X obj 752 353 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
+#X obj 1290 203 select 53 55 61 63;
+#X msg 1326 243 1;
+#X msg 1369 245 2;
+#X msg 1411 243 3;
+#X msg 1288 242 0;
+#X obj 1286 297 outlet;
+#X msg 1364 154 63;
+#X msg 1242 240 -1;
+#X text 1227 220 Init Drums;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
@@ -141,5 +150,16 @@
 #X connect 58 0 51 0;
 #X connect 59 0 52 0;
 #X connect 60 0 33 0;
+#X connect 60 0 64 0;
 #X connect 62 0 61 0;
 #X connect 63 0 62 1;
+#X connect 64 0 68 0;
+#X connect 64 1 65 0;
+#X connect 64 2 66 0;
+#X connect 64 3 67 0;
+#X connect 65 0 69 0;
+#X connect 66 0 69 0;
+#X connect 67 0 69 0;
+#X connect 68 0 69 0;
+#X connect 70 0 64 0;
+#X connect 71 0 69 0;
