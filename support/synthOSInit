@@ -1,0 +1,36 @@
+#! /bin/sh
+# /etc/init.d/synthOSInit
+#
+
+# Starts pyDispSys and SynthOS
+
+# Carry out specific task here if you wish :-)
+
+
+case "$1" in
+  start)
+    echo " "
+    echo " "
+    echo "- - - - - - - Starting PD - - - - - - - -  "
+    runlevel
+    sudo python /home/ccrma/pydispsys/dispSys.py &
+    echo "sleeping for 7 secs"
+    sleep 7
+    sudo pd -nogui -rt /home/ccrma/my-pd/synthOS/synthOS.pd &
+    echo "Starting script blah"
+    echo "Could do more here"
+    echo " "
+    echo " "
+    ;;
+  stop)
+    echo "Stoping script blah"
+    echo "Not really doing anything"
+    echo "coudl do mroe here"
+    ;;
+  *)
+    echo "Usage: /etc/init.d/blah {start|stop}"
+    exit 1
+    ;;
+esac
+
+exit 0
