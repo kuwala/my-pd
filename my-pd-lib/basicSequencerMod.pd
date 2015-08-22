@@ -1,4 +1,4 @@
-#N canvas 36 93 1777 828 10;
+#N canvas 32 19 1608 822 10;
 #X obj 48 126 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 24;
 #X obj 47 156 metro 500;
@@ -229,11 +229,10 @@
 #X msg 984 700 list 2.5 5 9.125 18.25 37.5;
 #X obj 97 118 r metroSpeed;
 #X obj 1395 731 s metroSpeed;
-#X obj 1395 757 r metroSpeed;
 #X text 835 44 play on/off;
 #X obj 353 214 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 127;
-#X obj 464 659 outlet;
+#X obj 464 673 outlet;
 #X obj 464 628 r toOSC;
 #X obj 731 146 s toOSC;
 #X text 453 603 to SequencerToOSC;
@@ -241,7 +240,7 @@
 #X obj 656 78 list split 1;
 #X obj 603 114 print ggr;
 #X obj 741 114 + 16;
-#N canvas 250 627 450 300 seqControls 1;
+#N canvas 250 627 450 300 seqControls 0;
 #X obj 36 41 inlet;
 #X text 104 28 Takes the synthMessages;
 #X obj 104 225 s seqWrite;
@@ -261,6 +260,13 @@
 #X text 350 13 synthMessages;
 #X obj 553 110 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 127;
+#X obj 532 628 r seqToggle;
+#X obj 532 674 outlet;
+#X obj 627 629 r seqWrite;
+#X obj 627 675 outlet;
+#X obj 707 672 outlet;
+#X obj 707 629 r metroSpeed;
+#X msg 222 137 26 127;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X connect 1 0 2 0;
@@ -268,7 +274,7 @@
 #X connect 2 0 5 0;
 #X connect 4 0 6 0;
 #X connect 4 0 109 0;
-#X connect 4 0 168 0;
+#X connect 4 0 167 0;
 #X connect 6 0 8 0;
 #X connect 6 1 7 0;
 #X connect 6 2 9 0;
@@ -337,7 +343,7 @@
 #X connect 64 0 107 0;
 #X connect 64 0 66 0;
 #X connect 66 0 108 0;
-#X connect 66 0 169 0;
+#X connect 66 0 168 0;
 #X connect 83 0 22 1;
 #X connect 84 0 21 1;
 #X connect 85 0 19 1;
@@ -358,11 +364,11 @@
 #X connect 100 1 53 0;
 #X connect 101 0 102 0;
 #X connect 101 1 105 0;
-#X connect 101 1 163 0;
+#X connect 101 1 162 0;
 #X connect 101 2 116 0;
 #X connect 102 0 103 0;
 #X connect 106 0 66 1;
-#X connect 106 0 175 0;
+#X connect 106 0 174 0;
 #X connect 108 0 67 0;
 #X connect 108 1 68 0;
 #X connect 108 2 69 0;
@@ -437,8 +443,12 @@
 #X connect 156 11 144 0;
 #X connect 157 0 138 0;
 #X connect 159 0 1 1;
-#X connect 165 0 164 0;
-#X connect 169 0 170 0;
-#X connect 169 0 171 0;
-#X connect 171 0 166 0;
-#X connect 173 0 172 0;
+#X connect 164 0 163 0;
+#X connect 168 0 169 0;
+#X connect 168 0 170 0;
+#X connect 170 0 165 0;
+#X connect 172 0 171 0;
+#X connect 175 0 176 0;
+#X connect 177 0 178 0;
+#X connect 180 0 179 0;
+#X connect 181 0 101 0;
