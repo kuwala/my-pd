@@ -1,9 +1,9 @@
-#N canvas 579 45 1684 822 10;
-#X obj 48 126 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#N canvas 85 77 1684 822 10;
+#X obj -18 125 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 24;
 #X obj 47 156 metro 500;
 #X obj 45 195 counter;
-#X obj 15 192 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 24 195 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 46 229 % 16;
 #X floatatom 83 229 5 0 0 0 - - -;
@@ -57,7 +57,7 @@
 #X obj 216 33 inlet;
 #X obj 278 35 inlet;
 #X obj 327 157 s seqToggle;
-#X obj -16 94 r seqToggle;
+#X obj -19 98 r seqToggle;
 #X floatatom 110 199 5 0 0 0 - - -;
 #X floatatom 925 91 5 0 0 0 - - -;
 #X obj 924 64 r seqLen;
@@ -95,14 +95,14 @@
 #X obj 274 49 spigot;
 #X obj 299 73 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 306 26 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 127
+#X obj 306 26 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 127;
 #X obj 427 155 + 1;
-#X obj 426 183 moses 17;
-#X text 389 187 0-16;
-#X obj 313 151 moses 17;
 #X text 381 4 Expects 127 to write notes;
 #X obj 445 82 select 127;
+#X obj 313 151 moses 16;
+#X text 389 187 0-15;
+#X obj 426 183 moses 16;
 #X connect 0 0 20 0;
 #X connect 2 0 26 0;
 #X connect 3 0 14 0;
@@ -120,16 +120,16 @@
 #X connect 13 0 2 2;
 #X connect 17 0 23 0;
 #X connect 19 0 22 0;
-#X connect 19 0 28 0;
+#X connect 19 0 25 0;
 #X connect 20 0 21 0;
 #X connect 20 0 8 0;
 #X connect 22 0 20 1;
-#X connect 23 0 24 0;
-#X connect 24 0 18 0;
-#X connect 24 0 4 0;
+#X connect 23 0 28 0;
+#X connect 25 0 17 2;
+#X connect 25 0 2 2;
 #X connect 26 0 5 0;
-#X connect 28 0 17 2;
-#X connect 28 0 2 2;
+#X connect 28 0 18 0;
+#X connect 28 0 4 0;
 #X restore 451 109 pd midiInWriter;
 #X obj 450 181 s \$0-w0;
 #X obj 464 207 s \$0-w1;
@@ -177,8 +177,8 @@
 #X obj -25 274 s playNote;
 #X obj -35 472 r playNote;
 #X floatatom 8 499 5 0 0 0 - - -;
-#X obj -14 160 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 58 179 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X text 280 90 26 - Start/Stop;
 #X text 281 107 16 - write note;
 #X text 275 14 CC in;
@@ -230,7 +230,7 @@
 #X obj 97 118 r metroSpeed;
 #X obj 1395 731 s metroSpeed;
 #X text 835 44 play on/off;
-#X obj 353 214 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 127
+#X obj 353 214 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 127;
 #X obj 464 673 outlet;
 #X obj 464 628 r toOSC;
@@ -239,7 +239,6 @@
 #X obj -78 274 s toOSC;
 #X obj 656 78 list split 1;
 #X obj 603 114 print ggr;
-#X obj 741 114 + 16;
 #N canvas 250 627 450 300 seqControls 0;
 #X obj 36 41 inlet;
 #X text 104 28 Takes the synthMessages;
@@ -258,7 +257,7 @@
 #X restore 343 59 pd seqControls;
 #X obj 346 35 inlet;
 #X text 350 13 synthMessages;
-#X obj 553 110 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 127
+#X obj 553 110 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 127;
 #X obj 532 628 r seqToggle;
 #X obj 532 674 outlet;
@@ -268,11 +267,22 @@
 #X obj 707 629 r metroSpeed;
 #X msg 222 137 26 127;
 #X msg 222 105 16 127;
-#X obj 627 653 select 127;
 #X msg 460 45 list 60 127;
 #X msg 473 22 list 66 127;
 #X msg 566 21 list 68 127;
+#X obj 814 252 print bad stepp;
+#X text 622 604 sends 127 or 0;
+#X obj 795 629 r seqLen;
+#X obj 795 671 outlet;
+#X obj -18 155 select 0;
+#X text 793 606 length of sequence;
+#X obj 196 63 s midiThroughs;
+#X obj 337 528 t f;
+#X obj 337 509 unpack f f;
+#X obj 337 488 r midiThroughs;
+#X text 408 505 Midi out When Writing;
 #X connect 0 0 1 0;
+#X connect 0 0 189 0;
 #X connect 1 0 3 0;
 #X connect 1 0 2 0;
 #X connect 2 0 4 0;
@@ -347,6 +357,7 @@
 #X connect 63 0 58 0;
 #X connect 64 0 107 0;
 #X connect 64 0 66 0;
+#X connect 64 0 191 0;
 #X connect 66 0 108 0;
 #X connect 66 0 168 0;
 #X connect 83 0 22 1;
@@ -373,7 +384,7 @@
 #X connect 101 2 116 0;
 #X connect 102 0 103 0;
 #X connect 106 0 66 1;
-#X connect 106 0 174 0;
+#X connect 106 0 173 0;
 #X connect 108 0 67 0;
 #X connect 108 1 68 0;
 #X connect 108 2 69 0;
@@ -390,6 +401,7 @@
 #X connect 108 13 79 0;
 #X connect 108 14 80 0;
 #X connect 108 15 81 0;
+#X connect 108 16 185 0;
 #X connect 110 0 111 0;
 #X connect 112 0 2 2;
 #X connect 117 0 118 0;
@@ -450,15 +462,18 @@
 #X connect 159 0 1 1;
 #X connect 164 0 163 0;
 #X connect 168 0 169 0;
-#X connect 168 0 170 0;
-#X connect 170 0 165 0;
-#X connect 172 0 171 0;
-#X connect 175 0 176 0;
-#X connect 177 0 183 0;
-#X connect 180 0 179 0;
+#X connect 168 0 165 0;
+#X connect 171 0 170 0;
+#X connect 174 0 175 0;
+#X connect 176 0 177 0;
+#X connect 179 0 178 0;
+#X connect 180 0 101 0;
 #X connect 181 0 101 0;
-#X connect 182 0 101 0;
-#X connect 183 0 178 0;
+#X connect 182 0 66 0;
+#X connect 183 0 66 0;
 #X connect 184 0 66 0;
-#X connect 185 0 66 0;
-#X connect 186 0 66 0;
+#X connect 187 0 188 0;
+#X connect 189 0 112 0;
+#X connect 192 0 33 0;
+#X connect 193 0 192 0;
+#X connect 194 0 193 0;
