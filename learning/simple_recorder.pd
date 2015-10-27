@@ -1,0 +1,47 @@
+#N canvas 992 190 450 522 10;
+#X obj -30 -72 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -30 -42 openpanel;
+#X msg -29 -16 read -resize \$1 array1;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array array1 100 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0;
+#X coords 0 1 99 -1 200 140 1;
+#X restore 159 -8 graph;
+#X obj -29 13 soundfiler;
+#X obj -29 47 expr 44100 / $f1;
+#X floatatom -30 79 5 0 0 0 - - -;
+#X obj -30 107 phasor~;
+#X obj -30 138 *~;
+#X obj 158 145 hsl 200 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 75 124 unsig~ 50;
+#X obj -31 184 tabread4~ array1;
+#X obj -31 300 *~;
+#X floatatom 31 216 5 0 0 0 - - -;
+#X msg 33 243 \$1 20;
+#X obj 32 273 line~;
+#X obj -32 331 hip~ 5;
+#X text 15 330 DC offset filter;
+#X obj -32 373 dac~;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 4 0 5 0;
+#X connect 4 0 8 1;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 7 0 10 0;
+#X connect 8 0 11 0;
+#X connect 10 0 9 0;
+#X connect 11 0 12 0;
+#X connect 12 0 16 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 15 0 12 1;
+#X connect 16 0 18 0;
+#X connect 16 0 18 1;

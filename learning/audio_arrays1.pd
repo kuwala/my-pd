@@ -1,0 +1,178 @@
+#N canvas 780 129 1103 718 10;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array array1 100 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.0784
+0.0841 0.09 0.0961 0.1024 0.1089 0.1156 0.1225 0.1296 0.1369 0.1444
+0.1521 0.16 0.1681 0.1764 0.1849 0.1936 0.2025 0.2116 0.2209 0.2304
+0.2401 0.25 0.2601 0.2704 0.2809 0.2916 0.3025 0.3136 0.3249 0.3364
+0.3481 0.36 0.3721 0.3844 0.3969 0.4096 0.4225 0.4356 0.4489 0.4624
+0.4761 0.49 0.5041 0.5184 0.5329 0.5476 0.5625 0.5776 0.5929 0.6084
+0.6241 0.64 0.6561 0.6724 0.6889 0.7056 0.7225 0.7396 0.7569 0.7744
+0.7921 0.81 0.8281 0.8464 0.8649 0.8836 0.9025 0.9216 0.9409 0.9604
+1;
+#X coords 0 1 99 -1 200 140 1 0 0;
+#X restore 255 74 graph;
+#X obj 68 99 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 63 129 t b b;
+#X obj 62 176 f;
+#X obj 62 204 + 1;
+#X msg 95 159 -1;
+#X obj 141 178 sel 100;
+#X obj 133 214 del 2;
+#X msg 117 245 stop;
+#X obj 92 270 del 50;
+#X obj 91 237 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 22 229 t f f;
+#X obj 13 265 / 100;
+#X obj 18 298 *;
+#X floatatom 60 302 5 0 0 0 - - -;
+#X obj 23 340 tabwrite array1;
+#X obj 182 250 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 305 375 + 1;
+#X msg 334 322 -1;
+#X obj 306 349 f;
+#X obj 314 268 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 302 290 t b b;
+#X msg 391 416 stop;
+#X obj 120 299 print;
+#X obj 329 414 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 274 431 5 0 0 0 - - -;
+#X obj 441 395 del 1;
+#X obj 395 376 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 282 543 tabwrite array1;
+#X obj 254 469 t b f;
+#X floatatom 263 512 5 0 0 0 - - -;
+#X obj 350 453 del 25;
+#X obj 405 347 sel 100;
+#X obj 543 353 + 1;
+#X msg 563 302 -1;
+#X obj 544 327 f;
+#X obj 552 246 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 540 268 t b b;
+#X obj 579 381 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 512 409 5 0 0 0 - - -;
+#X obj 633 354 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 520 521 tabwrite array1;
+#X obj 492 447 t b f;
+#X floatatom 501 490 5 0 0 0 - - -;
+#X obj 643 325 sel 100;
+#X obj 592 421 spigot;
+#X msg 657 391 0;
+#X msg 608 393 1;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array array2 100 float 3;
+#A 0 -0.05 -0.05 -0.05 -0.05 0.249999 0.292856 0.307141 0.349998 0.392855
+0.407141 0.435712 0.449998 0.464283 0.478569 0.464283 0.449998 0.449998
+0.449998 0.449998 0.449998 0.449998 0.392855 -0.335713 -0.335713 -0.335713
+-0.364285 -0.37857 -0.392856 -0.407142 -0.407142 -0.414284 -0.421427
+-0.442856 -0.449999 -0.435713 -0.421428 -0.414285 -0.407142 -0.399999
+-0.392856 -0.392856 -0.392856 -0.385714 -0.378571 -0.349999 -0.335714
+-0.321428 -0.321428 -0.314285 -0.307142 -0.278571 -0.278571 -0.25 -0.235714
+-0.192857 -0.15 -0.0785719 0.00714201 0.092856 0.207141 0.292855 0.349998
+0.378569 0.378569 0.378569 0.378569 0.378569 0.378569 0.378569 0.364283
+0.357141 0.349998 0.342855 0.335712 0.321426 0.307141 0.292855 0.285712
+0.27857 0.27857 0.27857 0.264284 0.249998 0.235713 0.221427 0.207141
+0.164284 0.149999 -0.635712 -0.635712 -0.635712 -0.635712 -0.635712
+-0.635712 -0.635712 -0.635712 -0.621426 -0.621426 -0.621426 -0.621426
+;
+#X coords 0 1 99 -1 200 140 1;
+#X restore 493 83 graph;
+#X floatatom 294 592 5 0 0 0 ass - -;
+#X msg 561 580 \; blueb print;
+#X msg 671 576 \; array2 read ar2dan.txt;
+#X msg 672 521 \; array2 read ar2.txt;
+#X text 24 67 write a function into the array;
+#X text 305 242 second attempt;
+#X text 342 264 recents array to zero;
+#X msg 51 589 \; array1 rename danielsarray;
+#X text 53 621 maynot visualy update try dragging to update vis;
+#X msg 273 615 \; array1 const \$1;
+#X text 335 589 shift drag;
+#X msg 582 616 \; array2 write ar2.txt;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array array3 16 float 3;
+#A 0 -0.25714 -0.0714268 0.271429 0.699999 0.785713 -0.471425 -0.185712
+0.214287 -0.142855 -0.171426 0.257144 0.428571 -0.328568 -0.371425
+-0.328568 -0.299997;
+#X coords 0 1 16 -1 200 140 1 0 0;
+#X restore 736 83 graph;
+#X text 807 55 step sequencer array;
+#X msg 756 247 \; array3 0 0.5 0.7 0.8 0.1 0.2 0.3 0.4 0.5;
+#X msg 761 352 \; array3 9 -0.5 -0.6 -0.7 -0.9;
+#X text 968 252 set values after index 0;
+#X text 918 358 set values after index 9;
+#X msg 769 423 \; array3 xlabel -1.1 0 8 16;
+#X msg 757 298 \; array3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X msg 775 472 \; array3 xticks 0 1 4;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 1 5 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 4 0 10 0;
+#X connect 4 0 11 0;
+#X connect 4 0 3 1;
+#X connect 5 0 3 1;
+#X connect 6 0 5 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 7 0 16 0;
+#X connect 8 0 9 0;
+#X connect 9 0 3 0;
+#X connect 9 0 23 0;
+#X connect 10 0 9 0;
+#X connect 11 0 12 0;
+#X connect 11 1 14 0;
+#X connect 12 0 13 1;
+#X connect 12 0 13 0;
+#X connect 13 0 15 0;
+#X connect 14 0 15 1;
+#X connect 17 0 19 1;
+#X connect 17 0 24 0;
+#X connect 17 0 25 0;
+#X connect 17 0 32 0;
+#X connect 18 0 19 1;
+#X connect 19 0 17 0;
+#X connect 20 0 21 0;
+#X connect 21 0 19 0;
+#X connect 21 1 18 0;
+#X connect 22 0 31 0;
+#X connect 24 0 31 0;
+#X connect 25 0 29 0;
+#X connect 26 0 22 0;
+#X connect 29 0 30 0;
+#X connect 29 1 28 1;
+#X connect 30 0 28 0;
+#X connect 31 0 19 0;
+#X connect 32 0 26 0;
+#X connect 32 0 27 0;
+#X connect 33 0 35 1;
+#X connect 33 0 38 0;
+#X connect 33 0 39 0;
+#X connect 33 0 44 0;
+#X connect 34 0 35 1;
+#X connect 35 0 33 0;
+#X connect 36 0 37 0;
+#X connect 37 0 35 0;
+#X connect 37 1 34 0;
+#X connect 37 1 47 0;
+#X connect 38 0 45 0;
+#X connect 39 0 42 0;
+#X connect 42 0 43 0;
+#X connect 42 1 41 1;
+#X connect 43 0 41 0;
+#X connect 44 0 40 0;
+#X connect 44 0 46 0;
+#X connect 45 0 35 0;
+#X connect 46 0 45 1;
+#X connect 47 0 45 1;
+#X connect 49 0 58 0;
