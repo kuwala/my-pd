@@ -1010,7 +1010,7 @@ to seqMessage;
 #X connect 63 0 61 0;
 #X connect 64 0 61 0;
 #X restore 344 75 pd hwToOSC;
-#N canvas 877 264 518 524 mixerBlock 1;
+#N canvas 930 510 518 524 mixerBlock 0;
 #X obj 28 40 inlet~;
 #X obj 28 190 *~ 0.25;
 #X obj 160 81 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
@@ -1058,7 +1058,7 @@ to seqMessage;
 #X obj 168 287 delay 2400;
 #X obj 393 484 tabread4~ \$0Aarray;
 #X obj 525 376 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 5338 1;
+-1 -1 9654 1;
 #X obj 522 354 unsig~ 50;
 #X obj 394 421 *~ 44100;
 #X msg 404 292 0;

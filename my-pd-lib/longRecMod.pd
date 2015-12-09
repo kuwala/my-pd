@@ -41,8 +41,8 @@
 -1 -1;
 #X text 132 257 Record;
 #X text 416 212 Play;
-#X msg 49 343 open diskA.wav;
-#X msg 348 291 open diskA.wav;
+#X msg 49 343 open ../audioRecs/diskA.wav;
+#X msg 348 291 open ../audioRecs/diskA.wav;
 #X connect 1 0 8 0;
 #X connect 2 0 32 0;
 #X connect 2 0 33 0;
