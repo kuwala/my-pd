@@ -13,7 +13,7 @@
 #X connect 6 0 5 0;
 #X connect 6 0 1 0;
 #X restore 27 68 pd midiTranslator;
-#N canvas 882 197 450 571 ezDrumSoundEngine 1;
+#N canvas 882 197 450 571 ezDrumSoundEngine 0;
 #X obj 29 27 inlet;
 #N canvas 1073 97 520 324 soundArrays 0;
 #X obj 54 59 table sampleSizeArray;
@@ -133,10 +133,8 @@
 #X text 41 241 Audio out;
 #X text 235 238 drum state out;
 #X obj 221 85 t f;
-#X obj 124 198 print;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 0 7 0;
-#X connect 1 0 8 0;
 #X connect 2 0 3 0;
 #X connect 7 0 4 0;
