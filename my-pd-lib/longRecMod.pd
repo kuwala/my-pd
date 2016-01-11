@@ -40,7 +40,7 @@
 #X text 416 212 Play;
 #X msg 49 343 open /home/ccrma/audio_recs/diskA.wav;
 #X msg 348 291 open /home/ccrma/audio_recs/diskA.wav;
-#N canvas 1018 477 450 418 runTimeCounter 0;
+#N canvas 1018 477 450 418 runTimeCounter 1;
 #X obj 58 49 inlet;
 #X obj 77 368 outlet;
 #X obj 66 90 route start stop;
@@ -59,8 +59,8 @@
 #X obj 145 187 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X text 93 18 counts runTime in millis updates value every 100ms;
-#X obj 74 193 delay 10;
-#X obj 75 286 * 10;
+#X obj 74 193 delay 100;
+#X obj 75 286 * 100;
 #X connect 0 0 2 0;
 #X connect 2 0 5 0;
 #X connect 2 1 6 0;
